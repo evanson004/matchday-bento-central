@@ -31,9 +31,9 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
-  const next = upcoming[0];
-  const last = results[results.length - 1];
-  const topNews = articles[0];
+  const next = upcoming[0]!;
+  const last = results[results.length - 1]!;
+  const topNews = articles[0]!;
 
   return (
     <div className="mx-auto max-w-7xl px-4 pt-8 sm:px-6 md:pt-12">

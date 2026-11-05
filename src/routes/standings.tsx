@@ -20,9 +20,9 @@ export const Route = createFileRoute("/standings")({
 });
 
 function StandingsPage() {
-  const leader = standings[0];
-  const bestAttack = [...standings].sort((a, b) => b.gf - a.gf)[0];
-  const bestDefence = [...standings].sort((a, b) => a.ga - b.ga)[0];
+  const leader = standings[0]!;
+  const bestAttack = [...standings].sort((a, b) => b.gf - a.gf)[0]!;
+  const bestDefence = [...standings].sort((a, b) => a.ga - b.ga)[0]!;
 
   return (
     <>

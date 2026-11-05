@@ -57,7 +57,7 @@ function TeamCard({
   onToggle: () => void;
 }) {
   const pos = standings.findIndex((s) => s.teamId === team.id);
-  const s = standings[pos];
+  const s = standings[pos]!;
 
   return (
     <button
