@@ -185,14 +185,14 @@ function Index() {
         </Link>
 
         {/* Quick links */}
-        <QuickTile to="/news" icon={<Newspaper />} title="News" text={`${articles.length} recent stories`} tone="tile-soft" />
-        <QuickTile to="/teams" icon={<Shield />} title="Teams" text={`${teams.length} community clubs`} tone="tile-sky" />
-        <QuickTile to="/gallery" icon={<Camera />} title="Gallery" text="Matchday moments" tone="tile-soft" />
+        <QuickTile to="/news" icon={<Newspaper />} title="News" text={`${articles.length} recent stories`} tone="tile-soft" span="lg:col-span-4" />
+        <QuickTile to="/teams" icon={<Shield />} title="Teams" text={`${teams.length} community clubs`} tone="tile-sky" span="lg:col-span-3" />
+        <QuickTile to="/gallery" icon={<Camera />} title="Gallery" text="Matchday moments" tone="tile-soft" span="lg:col-span-4" />
 
         {/* Community */}
         <Link
           to="/community"
-          className="tile tile-interactive fade-up relative col-span-1 min-h-[220px] p-0 md:col-span-6 lg:col-span-12"
+          className="tile tile-interactive fade-up relative col-span-1 min-h-[220px] p-0 md:col-span-6 lg:col-span-8"
         >
           <div className="grid h-full md:grid-cols-[1.2fr_1fr]">
             <div className="flex flex-col justify-center gap-3 p-8 md:p-10">
@@ -226,17 +226,19 @@ function QuickTile({
   title,
   text,
   tone,
+  span,
 }: {
   to: "/news" | "/teams" | "/gallery";
   icon: React.ReactNode;
   title: string;
   text: string;
   tone: string;
+  span: string;
 }) {
   return (
     <Link
       to={to}
-      className={`tile ${tone} tile-interactive fade-up group col-span-1 flex flex-col justify-between md:col-span-2 lg:col-span-4 [&_svg]:size-6`}
+      className={`tile ${tone} tile-interactive fade-up group col-span-1 flex flex-col justify-between md:col-span-2 ${span} [&_svg]:size-6`}
     >
       <span className="flex size-12 items-center justify-center rounded-2xl bg-card">{icon}</span>
       <div>
